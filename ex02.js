@@ -1,3 +1,3 @@
 module.exports = function stringConvert(str = "") {
-    return str.toLowerCase()
+    return str.toUpperCase()
 }
