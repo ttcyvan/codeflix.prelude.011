@@ -11,7 +11,6 @@ function convert(str = "", resToLoweropt = false) {
 
     }
 
-
 }
 
 console.log(convert("one Code"));

@@ -1,11 +1,25 @@
-function kebabCase(str = "") {
-    //let teste = str.replace(/ /g, "-").replace(/[A-Z]/g, "-")
+function kebabcase(str = "") {
+    let finish
 
+    if(str.match(/-/))
+    {
+        finish = str.replace(/(^-|-$)/g, "")
+    }
+    else if (str.match(/([A-Z])/g))
+    {
+        finish = str.replace(/([A-Z])/g, " $1")
+        finish = finish.replace(/ /, "")
+        finish = finish.replace(/ /g, "-")
+    }
+    else
+    {
+        finish = str.replace(/ /g, "-")
+    }
+    finish = finish.toLowerCase()
 
-    teste = str.slice(1);
-
-
-    //teste += str.replace(/[A-Z]/g, "-");
-    return teste;
+    return finish
 }
-console.log(kebabCase("Love One cOde"))
+
+console.log(kebabcase("love one code"));
+console.log(kebabcase("LoveOneCode"));
+console.log(kebabcase("-Love-One-Code-"));
